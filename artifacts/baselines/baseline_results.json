@@ -1,0 +1,73 @@
+{
+  "logistic_regression": {
+    "metrics": {
+      "test_accuracy": 0.9799496115893345,
+      "test_balanced_accuracy": 0.9799977517911282,
+      "test_precision": 0.9738712374581939,
+      "test_recall": 0.986031746031746,
+      "test_f1": 0.9799137659059838,
+      "test_f1_macro": 0.9799495477334592,
+      "test_mcc": 0.9599742812936618,
+      "test_tp": 9318,
+      "test_fp": 250,
+      "test_tn": 9352,
+      "test_fn": 132,
+      "test_specificity": 0.9739637575505103,
+      "test_fpr": 0.02603624244948969,
+      "test_fnr": 0.013968253968253968,
+      "test_roc_auc": 0.998146032186857,
+      "test_pr_auc": 0.998040832488062,
+      "test_brier_score": 0.022266661748290062,
+      "test_ece": 0.06378749022537966
+    },
+    "best_params": {},
+    "training_time": 13.411904573440552
+  },
+  "linear_svm": {
+    "metrics": {
+      "test_accuracy": 0.9912870039890825,
+      "test_balanced_accuracy": 0.9913333531704704,
+      "test_precision": 0.9854632921982849,
+      "test_recall": 0.9971428571428571,
+      "test_f1": 0.9912686724174206,
+      "test_f1_macro": 0.9912869655822698,
+      "test_mcc": 0.982642448917525,
+      "test_tp": 9423,
+      "test_fp": 139,
+      "test_tn": 9463,
+      "test_fn": 27,
+      "test_specificity": 0.9855238491980838,
+      "test_fpr": 0.014476150801916268,
+      "test_fnr": 0.002857142857142857,
+      "test_roc_auc": 0.9991772326973327,
+      "test_pr_auc": 0.9990476386103967,
+      "test_brier_score": 0.013196409217218182,
+      "test_ece": 0.04912501042983186
+    },
+    "best_params": {},
+    "training_time": 152.95922875404358
+  },
+  "xgboost": {
+    "metrics": {
+      "test_accuracy": 0.9888725593113584,
+      "test_balanced_accuracy": 0.9889053537126855,
+      "test_precision": 0.9846799580272823,
+      "test_recall": 0.993015873015873,
+      "test_f1": 0.9888303477344573,
+      "test_f1_macro": 0.9888724003888769,
+      "test_mcc": 0.9777796737587445,
+      "test_tp": 9384,
+      "test_fp": 146,
+      "test_tn": 9456,
+      "test_fn": 66,
+      "test_specificity": 0.984794834409498,
+      "test_fpr": 0.015205165590501979,
+      "test_fnr": 0.006984126984126984,
+      "test_roc_auc": 0.9993577341140348,
+      "test_pr_auc": 0.999348496877856,
+      "test_brier_score": 0.008979777805507183,
+      "test_ece": 0.012323087843939798
+    },
+    "training_time": 5032.295846223831
+  }
+}

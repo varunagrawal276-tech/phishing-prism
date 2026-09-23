@@ -1,0 +1,85 @@
+# PRISM-Phish: Evaluation Configuration
+# =======================================
+
+# Metrics to compute
+metrics:
+  classification:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - specificity
+    - balanced_accuracy
+    - roc_auc
+    - pr_auc
+    - mcc
+    - brier_score
+    - ece
+    - fpr
+    - fnr
+
+  primary_security: "recall"  # phishing recall
+  primary_balanced: "f1_macro"
+
+# Cross-source evaluation
+cross_source:
+  leave_one_out: true
+  sources:
+    - Ling
+    - Enron
+    - Assassin
+    - TREC-05
+    - TREC-06
+    - TREC-07
+    - CEAS-08
+
+# Source-artifact probe
+source_probe:
+  enabled: true
+  classifier: "logistic_regression"
+  use_frozen_embeddings: true
+
+# Calibration
+calibration:
+  temperature_scaling: true
+  n_bins: 15
+  fit_on: "validation"  # Never on test
+
+# Selective prediction / abstention
+abstention:
+  enabled: true
+  uncertainty_thresholds: [0.3, 0.4, 0.5, 0.6, 0.7]
+  report_coverage_risk_curves: true
+
+# Statistical testing
+statistical_tests:
+  bootstrap_n_iterations: 10000
+  confidence_level: 0.95
+  mcnemar: true
+  wilcoxon: true
+
+# Ablation
+ablation:
+  variants:
+    - name: "A_tfidf_baseline"
+    - name: "B_transformer_only"
+    - name: "C_transformer_structural"
+    - name: "D_transformer_domain_adversarial"
+    - name: "E_transformer_consistency"
+    - name: "F_transformer_domain_consistency"
+    - name: "G_full_prism_phish"
+  feature_ablation:
+    - without_url_features
+    - without_sender_header_features
+    - without_date_features
+    - without_lexical_features
+
+# Output
+output:
+  save_predictions: true
+  save_confusion_matrices: true
+  save_calibration_plots: true
+  save_roc_curves: true
+  save_pr_curves: true
+  report_dir: "artifacts/metrics"
+  plot_dir: "artifacts/plots"

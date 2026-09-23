@@ -1,0 +1,14 @@
+name: phishing-prism
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - -r requirements.txt
+    - torch>=2.4
+    - torchvision
+    - torchaudio

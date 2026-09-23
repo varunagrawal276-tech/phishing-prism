@@ -1,0 +1,70 @@
+{
+  "per_source": {
+    "Assassin": {
+      "test_roc_auc": 0.9672226919081012,
+      "test_pr_auc": 0.9395807054782346,
+      "test_f1": 0.8547717842323651,
+      "test_precision": 0.8144438587243016,
+      "test_recall": 0.8993015133876601,
+      "num_test_samples": 5809
+    },
+    "CEAS-08": {
+      "test_roc_auc": 0.8482059470946697,
+      "test_pr_auc": 0.9143339902862275,
+      "test_f1": 0.8444138134737982,
+      "test_precision": 0.9131221719457013,
+      "test_recall": 0.7853218569728047,
+      "num_test_samples": 39154
+    },
+    "Enron": {
+      "test_roc_auc": 0.965307293119841,
+      "test_pr_auc": 0.961439282592658,
+      "test_f1": 0.8630434782608696,
+      "test_precision": 0.7800508552935738,
+      "test_recall": 0.9657985117344018,
+      "num_test_samples": 29767
+    },
+    "Ling": {
+      "test_roc_auc": 0.9901369334829556,
+      "test_pr_auc": 0.961125745213902,
+      "test_f1": 0.8428158148505304,
+      "test_precision": 0.7547495682210709,
+      "test_recall": 0.9541484716157205,
+      "num_test_samples": 2859
+    },
+    "TREC-07": {
+      "test_roc_auc": 0.9762352632452288,
+      "test_pr_auc": 0.9786367679819217,
+      "test_f1": 0.8944514729803,
+      "test_precision": 0.954263237052177,
+      "test_recall": 0.8416952957583591,
+      "num_test_samples": 53757
+    }
+  },
+  "summary": {
+    "test_roc_auc_mean": 0.9494,
+    "test_roc_auc_std": 0.0514,
+    "test_roc_auc_min": 0.8482,
+    "test_roc_auc_max": 0.9901,
+    "test_pr_auc_mean": 0.951,
+    "test_pr_auc_std": 0.0221,
+    "test_pr_auc_min": 0.9143,
+    "test_pr_auc_max": 0.9786,
+    "test_f1_mean": 0.8599,
+    "test_f1_std": 0.0188,
+    "test_f1_min": 0.8428,
+    "test_f1_max": 0.8945,
+    "test_precision_mean": 0.8433,
+    "test_precision_std": 0.0773,
+    "test_precision_min": 0.7547,
+    "test_precision_max": 0.9543,
+    "test_recall_mean": 0.8893,
+    "test_recall_std": 0.0682,
+    "test_recall_min": 0.7853,
+    "test_recall_max": 0.9658,
+    "num_test_samples_mean": 26269.2,
+    "num_test_samples_std": 19496.0974,
+    "num_test_samples_min": 2859.0,
+    "num_test_samples_max": 53757.0
+  }
+}

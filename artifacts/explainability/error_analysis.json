@@ -1,0 +1,99 @@
+{
+  "total_samples": 19052,
+  "total_errors": 382,
+  "error_rate": 0.020050388410665546,
+  "false_positives": {
+    "count": 250,
+    "fp_rate": 0.02603624244948969
+  },
+  "false_negatives": {
+    "count": 132,
+    "fn_rate": 0.013968253968253968
+  },
+  "by_source": {
+    "Assassin": {
+      "total": 880,
+      "fp": 23,
+      "fn": 16,
+      "error_rate": 0.04431818181818182
+    },
+    "CEAS-08": {
+      "total": 5350,
+      "fp": 93,
+      "fn": 8,
+      "error_rate": 0.018878504672897197
+    },
+    "Enron": {
+      "total": 4432,
+      "fp": 87,
+      "fn": 17,
+      "error_rate": 0.023465703971119134
+    },
+    "Ling": {
+      "total": 433,
+      "fp": 9,
+      "fn": 1,
+      "error_rate": 0.023094688221709007
+    },
+    "TREC-07": {
+      "total": 7957,
+      "fp": 38,
+      "fn": 90,
+      "error_rate": 0.016086464748020612
+    }
+  },
+  "worst_false_positives": [
+    {
+      "subject": "[Reform] Increase Your Penis Width (Girth) By upto 20%.",
+      "pred_prob": 0.9628351926803589,
+      "source": "TREC-07"
+    },
+    {
+      "subject": "[Reform] Photoshop, Windows, Office",
+      "pred_prob": 0.9383296370506287,
+      "source": "TREC-07"
+    },
+    {
+      "subject": "[Reform] 0EM Software",
+      "pred_prob": 0.9377890825271606,
+      "source": "TREC-07"
+    },
+    {
+      "subject": "money",
+      "pred_prob": 0.9170018434524536,
+      "source": "CEAS-08"
+    },
+    {
+      "subject": "[Reform] Investition",
+      "pred_prob": 0.914749026298523,
+      "source": "TREC-07"
+    }
+  ],
+  "worst_false_negatives": [
+    {
+      "subject": "Re: change of plans",
+      "pred_prob": 0.08166913688182831,
+      "source": "Assassin"
+    },
+    {
+      "subject": "For the University Rankings released in March 2007, Macleans surveyed 70,000 stu",
+      "pred_prob": 0.11567749083042145,
+      "source": "TREC-07"
+    },
+    {
+      "subject": "FWD: Requested documents",
+      "pred_prob": 0.13106568157672882,
+      "source": "TREC-07"
+    },
+    {
+      "subject": "hi",
+      "pred_prob": 0.14402389526367188,
+      "source": "CEAS-08"
+    },
+    {
+      "subject": "Error",
+      "pred_prob": 0.16269005835056305,
+      "source": "CEAS-08"
+    }
+  ]
+}

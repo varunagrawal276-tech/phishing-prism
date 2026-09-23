@@ -1,0 +1,80 @@
+# PRISM-Phish: Training Configuration
+# =====================================
+
+# General
+seed: 42
+seeds_for_final: [42, 52, 62]
+seeds_extended: [42, 52, 62, 72, 82]
+deterministic: true
+
+# Hardware
+device: "auto"  # auto | cuda | cpu
+mixed_precision: true
+compile_model: false  # torch.compile — experimental
+
+# Training hyperparameters
+training:
+  # Transformer / PRISM-Phish
+  transformer:
+    learning_rate: 2.0e-5
+    weight_decay: 0.01
+    batch_size: 16
+    gradient_accumulation_steps: 2
+    max_epochs: 10
+    warmup_ratio: 0.1
+    max_grad_norm: 1.0
+    scheduler: "cosine"  # cosine | linear | constant_with_warmup
+
+  # Classical baselines
+  classical:
+    cv_folds: 5
+    scoring: "f1_macro"
+
+# Early stopping
+early_stopping:
+  enabled: true
+  patience: 3
+  metric: "val_f1_macro"
+  mode: "max"
+  min_delta: 0.001
+
+# Checkpointing
+checkpointing:
+  save_best: true
+  save_last: true
+  save_every_n_epochs: null
+  checkpoint_dir: "artifacts/checkpoints"
+
+# Data loading
+dataloader:
+  num_workers: 2
+  pin_memory: true
+  drop_last: false
+  dynamic_padding: true
+
+# GPU memory management — automatic OOM recovery
+oom_recovery:
+  enabled: true
+  batch_size_reduction_factor: 0.5
+  max_retries: 3
+  reduce_sequence_length: true
+  min_batch_size: 2
+  min_sequence_length: 128
+
+# Splitting
+splitting:
+  test_size: 0.15
+  val_size: 0.15
+  stratify_by: "label"
+  group_by: "dedup_cluster_id"
+
+# Class balancing
+class_balancing:
+  method: "weighted_loss"  # weighted_loss | oversample | undersample | none
+  source_balancing: "proportional"  # proportional | equal | none
+
+# Logging
+logging:
+  log_every_n_steps: 50
+  log_dir: "artifacts/metrics"
+  verbose: true

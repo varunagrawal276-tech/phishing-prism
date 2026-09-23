@@ -1,0 +1,99 @@
+# PRISM-Phish: Feature Configuration
+# ====================================
+
+# Feature groups and their enabled status
+feature_groups:
+  lexical:
+    enabled: true
+    features:
+      - email_length
+      - subject_length
+      - word_count
+      - sentence_count
+      - uppercase_ratio
+      - digit_ratio
+      - punctuation_ratio
+      - exclamation_count
+      - question_count
+      - urgency_lexicon_count
+      - credential_request_lexicon_count
+      - financial_action_lexicon_count
+      - call_to_action_count
+
+  url:
+    enabled: true
+    features:
+      - url_count
+      - total_url_chars
+      - mean_url_length
+      - max_url_length
+      - hostname_length_mean
+      - path_length_mean
+      - query_length_mean
+      - num_subdomains_mean
+      - digit_ratio_url
+      - special_char_ratio_url
+      - percent_encoding_count
+      - ip_address_hostname
+      - punycode_indicator
+      - suspicious_token_count
+      - url_entropy_mean
+
+  sender_header:
+    enabled: true
+    features:
+      - sender_present
+      - sender_domain_length
+      - free_email_provider
+      - display_name_email_mismatch
+      - sender_receiver_mismatch
+      - missing_header_indicators
+
+  html_format:
+    enabled: true
+    features:
+      - html_presence
+      - text_html_ratio
+      - anchor_count
+      - form_count
+      - hidden_text_indicators
+      - external_resource_count
+
+# Normalization
+normalization:
+  method: "standard"  # standard | robust | minmax
+  fit_on_train_only: true
+  handle_missing: "indicator"  # indicator | impute_mean | impute_median
+
+# Urgency lexicon (examples — expanded at runtime)
+urgency_lexicon:
+  - "urgent"
+  - "immediately"
+  - "action required"
+  - "verify your account"
+  - "suspend"
+  - "expire"
+  - "within 24 hours"
+  - "limited time"
+  - "act now"
+
+# Credential-request lexicon
+credential_lexicon:
+  - "password"
+  - "login"
+  - "credential"
+  - "verify your identity"
+  - "confirm your account"
+  - "social security"
+  - "bank account"
+  - "credit card"
+
+# Free email providers
+free_email_providers:
+  - "gmail.com"
+  - "yahoo.com"
+  - "hotmail.com"
+  - "outlook.com"
+  - "aol.com"
+  - "mail.com"
+  - "protonmail.com"

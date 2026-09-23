@@ -1,0 +1,82 @@
+# PRISM-Phish: Model Configuration
+# ==================================
+
+# Transformer encoder
+transformer:
+  model_name: "microsoft/deberta-v3-small"
+  fallback_models:
+    - "distilbert-base-uncased"
+    - "distilroberta-base"
+    - "microsoft/MiniLM-L12-H384-uncased"
+  max_length: 512
+  pooling: "cls"  # cls | mean | max
+  freeze_embeddings: false
+  freeze_n_layers: 0
+
+# Classical baselines
+classical:
+  tfidf:
+    max_features_word: 50000
+    max_features_char: 50000
+    word_ngram_range: [1, 2]
+    char_ngram_range: [3, 5]
+    sublinear_tf: true
+    min_df: 2
+
+  logistic_regression:
+    C: [0.01, 0.1, 1.0, 10.0]
+    max_iter: 1000
+    solver: "lbfgs"
+
+  linear_svm:
+    C: [0.01, 0.1, 1.0, 10.0]
+    max_iter: 5000
+
+  xgboost:
+    n_estimators: [100, 300, 500]
+    max_depth: [4, 6, 8]
+    learning_rate: [0.05, 0.1, 0.2]
+    subsample: 0.8
+    colsample_bytree: 0.8
+
+# PRISM-Phish architecture
+prism_phish:
+  # Structural MLP
+  structural_mlp:
+    hidden_dims: [128, 64]
+    dropout: 0.2
+    activation: "gelu"
+
+  # Fusion
+  fusion:
+    method: "gated"  # gated | concat | attention
+    projection_dim: 256
+
+  # Phishing classifier head
+  classifier:
+    hidden_dims: [128]
+    dropout: 0.3
+
+  # Domain adversarial
+  domain_adversarial:
+    enabled: true
+    num_sources: 7
+    hidden_dims: [128, 64]
+    dropout: 0.2
+    # GRL schedule: lambda increases from 0 to max over schedule_steps
+    grl_lambda_max: 1.0
+    grl_schedule: "linear"  # linear | exponential | step
+    grl_warmup_steps: 500
+
+  # Perturbation consistency
+  consistency:
+    enabled: true
+    loss_type: "symmetric_kl"  # symmetric_kl | mse | js_divergence
+    lambda_consistency: 0.5
+    augmentation_prob: 0.5
+
+# Loss weights
+loss_weights:
+  phishing: 1.0
+  domain: 0.1
+  consistency: 0.5

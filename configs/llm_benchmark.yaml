@@ -1,0 +1,86 @@
+# PRISM-Phish: LLM Benchmark Configuration
+# ==========================================
+
+# General settings
+general:
+  temperature: 0.0
+  max_output_tokens: 100
+  timeout_seconds: 60
+  max_retries: 3
+  save_raw_output: true
+
+# Models
+models:
+  # Local models (quantized for 8GB VRAM)
+  local:
+    - name: "Qwen2.5-3B-Instruct"
+      model_id: "Qwen/Qwen2.5-3B-Instruct"
+      quantization: "4bit"
+      max_model_len: 2048
+      enabled: true
+
+    - name: "Phi-4-mini-Instruct"
+      model_id: "microsoft/Phi-4-mini-instruct"
+      quantization: "4bit"
+      max_model_len: 2048
+      enabled: true
+
+  # API models (optional — requires API key in environment)
+  api:
+    - name: "gemini-2.0-flash"
+      provider: "google"
+      env_key: "GOOGLE_API_KEY"
+      enabled: false
+
+# Prompt template
+prompt:
+  system: |
+    You are an email security classifier. Analyze the following email and determine
+    whether it is a PHISHING email or a LEGITIMATE email.
+
+    Respond ONLY with a JSON object in this exact format:
+    {"prediction": "PHISHING" or "LEGITIMATE", "confidence": 0.0-1.0}
+
+    Do not include any other text, explanation, or formatting.
+
+  user_template: |
+    Subject: {subject}
+    From: {sender}
+    To: {receiver}
+
+    Body:
+    {body}
+
+# Evaluation tracks
+tracks:
+  track_a:
+    name: "Clean pooled test"
+    enabled: true
+
+  track_b:
+    name: "Leave-one-source-out"
+    enabled: true
+
+  track_c:
+    name: "Perturbation robustness"
+    enabled: true
+
+  track_d:
+    name: "Prompt-injection robustness"
+    enabled: true
+
+  track_e:
+    name: "Efficiency"
+    enabled: true
+    measure:
+      - parameters
+      - quantization
+      - model_size_gb
+      - latency_ms
+      - gpu_memory_mb
+
+# Output
+output:
+  save_raw_responses: true
+  save_parsed_results: true
+  report_dir: "artifacts/llm_benchmark"

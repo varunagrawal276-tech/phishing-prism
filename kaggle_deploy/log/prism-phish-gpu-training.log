@@ -1,0 +1,15 @@
+[{"stream_name":"stderr","time":30.758330481,"data":"2026-09-23 11:55:38,176 [INFO] kaggle_gpu_train: === Setting up Kaggle GPU Environment ===\n"}
+,{"stream_name":"stderr","time":31.06879066,"data":"2026-09-23 11:55:38,486 [INFO] kaggle_gpu_train: Using Device: cuda (Tesla T4)\n"}
+,{"stream_name":"stderr","time":31.068837553,"data":"2026-09-23 11:55:38,487 [INFO] kaggle_gpu_train: Extracting embedded src package...\n"}
+,{"stream_name":"stderr","time":31.068909663,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":31.068918386,"data":"  File \"/kaggle/src/script.py\", line 38, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":31.069327059,"data":"    with zipfile.ZipFile(io.BytesIO(base64.b64decode(SRC_B64))) as z:\n"}
+,{"stream_name":"stderr","time":31.069382579,"data":"                                    ^^^^^^\n"}
+,{"stream_name":"stderr","time":31.069516484,"data":"NameError: name 'base64' is not defined. Did you forget to import 'base64'?\n"}
+,{"stream_name":"stderr","time":35.71568999,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":35.715727521,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":35.964662004,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":35.96469303,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":36.608651626,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":37.879423108,"data":"[NbConvertApp] Writing 559547 bytes to __results__.html\n"}
+]

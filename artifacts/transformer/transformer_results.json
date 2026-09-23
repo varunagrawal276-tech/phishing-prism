@@ -1,0 +1,20 @@
+{
+  "test_accuracy": 0.76,
+  "test_balanced_accuracy": 0.5,
+  "test_precision": 0.0,
+  "test_recall": 0.0,
+  "test_f1": 0.0,
+  "test_f1_macro": 0.4318181818181818,
+  "test_mcc": 0.0,
+  "test_tp": 0,
+  "test_fp": 0,
+  "test_tn": 38,
+  "test_fn": 12,
+  "test_specificity": 1.0,
+  "test_fpr": 0.0,
+  "test_fnr": 1.0,
+  "test_roc_auc": 0.8859649122807017,
+  "test_pr_auc": 0.7107126941685766,
+  "test_brier_score": 0.17740820348262787,
+  "test_ece": 0.13079268217086792
+}

@@ -1,0 +1,66 @@
+# PRISM-Phish: Data Configuration
+# ================================
+
+# Figshare dataset source
+figshare:
+  article_id: 25432108
+  version: 1
+  base_url: "https://ndownloader.figshare.com/files"
+
+# Source datasets and their Figshare file IDs
+sources:
+  Ling:
+    file_id: 45117802
+    filename: "Ling.csv"
+    md5: "eac6399dc0c7ae455aebb64423dadc8b"
+  Assassin:
+    file_id: 45117799
+    filename: "Assassin.csv"
+    md5: "d921e0b2333bfaa058bd38193e6b3fbd"
+  Enron:
+    file_id: 45117805
+    filename: "Enron.csv"
+    md5: "10489e0fdcc8af6fe62135c689367d40"
+  TREC-05:
+    file_id: 45117817
+    filename: "TREC-05.csv"
+    md5: "ef4023fa9e64247212487b77a4c7d98e"
+  TREC-06:
+    file_id: 45117808
+    filename: "TREC-06.csv"
+    md5: "b840dc9477f86c098a71a0dfd25c928e"
+  TREC-07:
+    file_id: 45117814
+    filename: "TREC-07.csv"
+    md5: "e5a5ae0de1580965191cb32806dc0dae"
+  CEAS-08:
+    file_id: 45117811
+    filename: "CEAS-08.csv"
+    md5: "1f0d59191eec892a709995d48cd8decb"
+
+# Paths (relative to project root)
+paths:
+  raw: "data/raw"
+  interim: "data/interim"
+  processed: "data/processed"
+  splits: "data/splits"
+  external: "data/external"
+
+# Label mapping
+labels:
+  legitimate: 0
+  phishing: 1
+
+# Canonical schema
+canonical_columns:
+  - sample_id
+  - dataset_id
+  - subject
+  - body
+  - sender
+  - receiver
+  - date
+  - urls_raw
+  - url_count_source
+  - label
+  - raw_row_id
