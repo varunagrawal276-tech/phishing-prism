@@ -140,8 +140,9 @@ Extracts **52 engineered indicators** spanning 4 security vectors:
    - Financial trigger keywords (`"invoice"`, `"wire transfer"`, `"crypto"`, `"payroll"`, `"banking"`).
    - Account action requests (`"reset password"`, `"click here"`, `"update payment"`).
 3. **Email Header & Routing Vector:**
-   - Sender-reply mismatch (`From` header vs `Reply-To` domain).
-   - Free webmail sender domains (`gmail.com`, `yahoo.com`, `hotmail.com`) paired with corporate impersonation pretexts.
+   - Display name vs. email domain mismatch (display name contains a deceptive domain differing from actual sender domain).
+   - Sender-receiver domain mismatch (cross-domain outbound vs inbound disparity).
+   - Sender domain length and free webmail detection (`gmail.com`, `yahoo.com`, `hotmail.com`, etc.).
 4. **Layout & Formatting Vector:**
    - Ratio of HTML tags to plain text.
    - Presence of `<script>`, `<iframe>`, or hidden `<form action="...">` tags.
